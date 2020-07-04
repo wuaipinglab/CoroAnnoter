@@ -24,7 +24,7 @@ blastp -query ${samplename}.ORF -db ${blastdb} -evalue 1e-2 -max_target_seqs 3 -
 
 ####Manually remove redundant blast results####
 
-source("./merge_blast.R")
+source("./R/merge_blast.R")
 
 ####The blastdir contain genome and BLAST results 
 ####SARS_CoV-2.fasta, SARS_CoV-2.blast.*.xls
@@ -43,7 +43,7 @@ GetTRS(blastfile = "./inst/extdata/Manual-SARS_CoV-2.xls",
        
 ####MEME prediction motif####
 
-system("sh meme.sh ./inst/extdata/TRS")
+system("sh ./R/meme.sh ./inst/extdata/TRS")
 
 ####draw protein####
 
