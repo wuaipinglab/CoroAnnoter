@@ -1,7 +1,0 @@
-exportPattern("^[[:alpha:]]+")
-
-import(gdata, Biostrings, ggplot2)
-importFrom("grDevices", "dev.off", "pdf")
-importFrom("graphics", "plot")
-importFrom("utils", "read.csv", "read.delim", "write.csv",
-               "write.table")
