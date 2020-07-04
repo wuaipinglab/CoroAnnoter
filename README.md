@@ -18,6 +18,7 @@ A semi-automatic coronavirus genome annotation tool
 ####ORF finder####
 
 ORFfinder -in ${samplename}.fasta -g 1 -s 0 -ml 60 -out ${samplename}.ORF -outfmt 0
+
 ####blast####
 
 blastp -query ${samplename}.ORF -db ${blastdb} -evalue 1e-2 -max_target_seqs 3 -out ${samplename}.blast_out.xls -outfmt "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore slen stitle qcov"
@@ -28,6 +29,7 @@ source("./R/merge_blast.R")
 
 ####The blastdir contain genome and BLAST results 
 ####SARS_CoV-2.fasta, SARS_CoV-2.blast.*.xls
+
 source("./R/merge_blast.R")
 
 merge_blast("./inst/extdata")
@@ -36,6 +38,7 @@ merge_blast("./inst/extdata")
 ####Manually process blast results to remove redundant ID.
 
 ####get TRS####
+
 source("./R/getTRS.R")
 
 GetTRS(blastfile = "./inst/extdata/Manual-SARS_CoV-2.xls", 
@@ -55,6 +58,7 @@ pairwise_alignment(core_seq = "ACGAAC",
 source("./R/get_motif_location.R")
 
 get_motif_location(genomefile = "./inst/extdata/SARS_CoV-2.fasta","ACGAAC")
+
 source("./R/plot_protein_single.R")
 
 plot_protein_single(anno_R = "./inst/extdata/Manual-SARS_CoV-2_anno.csv",
