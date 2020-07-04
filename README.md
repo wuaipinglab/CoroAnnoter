@@ -40,6 +40,7 @@ source("./R/getTRS.R")
 
 GetTRS(blastfile = "./inst/extdata/Manual-SARS_CoV-2.xls", 
        genomefile = "./inst/extdata/SARS_CoV-2.fasta")
+       
 ####MEME prediction motif####
 
 system("sh meme.sh ./inst/extdata/TRS")
@@ -57,4 +58,4 @@ get_motif_location(genomefile = "./inst/extdata/SARS_CoV-2.fasta","ACGAAC")
 source("./R/plot_protein_single.R")
 
 plot_protein_single(anno_R = "./inst/extdata/Manual-SARS_CoV-2_anno.csv",
-                    TRSlocation <- "./inst/extdata/TRS/SARS_CoV-2.TRS")
+                    TRSlocation = "./inst/extdata/TRS/SARS_CoV-2.TRS")
