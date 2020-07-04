@@ -9,4 +9,4 @@ License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 Imports: gdata, Biostrings, ggplot2
-Built: R 3.6.1; ; 2020-07-04 15:51:19 UTC; windows
+Built: R 3.6.1; ; 2020-07-04 16:59:08 UTC; windows
