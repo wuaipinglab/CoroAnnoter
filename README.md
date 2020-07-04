@@ -24,7 +24,7 @@ blastp -query ${samplename}.ORF -db ${blastdb} -evalue 1e-2 -max_target_seqs 3 -
 
 ####Manually remove redundant blast results####
 
-source("./merge_blast.R")
+source("./R/merge_blast.R")
 
 ####The blastdir contain genome and BLAST results 
 ####SARS_CoV-2.fasta, SARS_CoV-2.blast.*.xls
@@ -40,9 +40,10 @@ source("./R/getTRS.R")
 
 GetTRS(blastfile = "./inst/extdata/Manual-SARS_CoV-2.xls", 
        genomefile = "./inst/extdata/SARS_CoV-2.fasta")
+       
 ####MEME prediction motif####
 
-system("sh meme.sh ./inst/extdata/TRS")
+system("sh ./R/meme.sh ./inst/extdata/TRS")
 
 ####draw protein####
 
@@ -57,4 +58,4 @@ get_motif_location(genomefile = "./inst/extdata/SARS_CoV-2.fasta","ACGAAC")
 source("./R/plot_protein_single.R")
 
 plot_protein_single(anno_R = "./inst/extdata/Manual-SARS_CoV-2_anno.csv",
-                    TRSlocation <- "./inst/extdata/TRS/SARS_CoV-2.TRS")
+                    TRSlocation = "./inst/extdata/TRS/SARS_CoV-2.TRS")
