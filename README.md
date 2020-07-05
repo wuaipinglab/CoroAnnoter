@@ -27,8 +27,7 @@ blastp -query ${samplename}.ORF -db ${blastdb} -evalue 1e-2 -max_target_seqs 3 -
 
 source("./R/merge_blast.R")
 
-####The blastdir contain genome and BLAST results 
-####SARS_CoV-2.fasta, SARS_CoV-2.blast.*.xls
+####The blastdir contain genome and BLAST results：SARS_CoV-2.fasta, SARS_CoV-2.blast.*.xls
 
 source("./R/merge_blast.R")
 
