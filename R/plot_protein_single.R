@@ -26,7 +26,6 @@ plot_protein_single <-function(anno_R,TRSlocation) {
     ####add protein
     ####Layered
     strain$order <- 1
-    #i <- 6
     for(i in 2:nrow(strain)) {
       temp.location <- c(strain$end[1:(i-1)],strain$start[i])
       temp.location <- sort(temp.location)
