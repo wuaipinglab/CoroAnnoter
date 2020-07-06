@@ -3,29 +3,29 @@
 # CoroAnnoter
 A semi-automatic coronavirus genome annotation tool
 
-#pipline
+# pipline
 
-####Data Preparation####
+### Data Preparation
 
-#1. Coronavirus genome
+#### 1.Coronavirus genome
 
-#2. blastdb
+#### 2.blastdb
 
-####soft Preparation####
+### soft Preparation
 
-#R, MEME, blast, ORFfinder
+R, MEME, blast, ORFfinder
 
-####annotation####
+### annotation
 
-####ORF finder####
+#### ORF finder
 
 ORFfinder -in ${samplename}.fasta -g 1 -s 0 -ml 60 -out ${samplename}.ORF -outfmt 0
 
-####blast####
+#### blast
 
 blastp -query ${samplename}.ORF -db ${blastdb} -evalue 1e-2 -max_target_seqs 3 -out ${samplename}.blast_out.xls -outfmt "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore slen stitle qcov"
 
-####Manually remove redundant blast results####
+#### Manually remove redundant blast results
 
 source("./R/merge_blast.R")
 
@@ -39,18 +39,18 @@ merge_blast("./inst/extdata")
 
 ####Manually process blast results to remove redundant ID.
 
-####get TRS####
+#### get TRS
 
 source("./R/getTRS.R")
 
 GetTRS(blastfile = "./inst/extdata/Manual-SARS_CoV-2.xls", 
        genomefile = "./inst/extdata/SARS_CoV-2.fasta")
        
-####MEME prediction motif####
+#### MEME prediction motif
 
 system("sh ./R/meme.sh ./inst/extdata/TRS")
 
-####draw protein####
+#### draw protein
 
 source("./R/pairwise_alignment.R")
 
@@ -67,7 +67,7 @@ plot_protein_single(anno_R = "./inst/extdata/Manual-SARS_CoV-2_anno.csv",
                     TRSlocation = "./inst/extdata/TRS/SARS_CoV-2.TRS")
 
 
-Download
+# Download
 
 The development version can be installed through github:
 
