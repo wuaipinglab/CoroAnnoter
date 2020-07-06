@@ -34,6 +34,7 @@ source("./R/merge_blast.R")
 merge_blast("./inst/extdata")
 
 ####The SARS_CoV-2.xls file were created. 
+
 ####Manually process blast results to remove redundant ID.
 
 ####get TRS####
