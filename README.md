@@ -3,7 +3,7 @@
 # CoroAnnoter
 A semi-automatic coronavirus genome annotation tool
 
-# pipline
+# Pipline
 
 ### Data Preparation
 
