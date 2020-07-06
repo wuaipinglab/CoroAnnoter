@@ -1,3 +1,5 @@
+
+
 # CoroAnnoter
 A semi-automatic coronavirus genome annotation tool
 
@@ -63,3 +65,11 @@ source("./R/plot_protein_single.R")
 
 plot_protein_single(anno_R = "./inst/extdata/Manual-SARS_CoV-2_anno.csv",
                     TRSlocation = "./inst/extdata/TRS/SARS_CoV-2.TRS")
+
+
+Download
+The development version can be installed through github:
+
+devtools::install_github(repo="wuaipinglab/CoroAnnoter")
+
+library(CoroAnnoter)
