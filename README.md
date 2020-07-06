@@ -68,6 +68,7 @@ plot_protein_single(anno_R = "./inst/extdata/Manual-SARS_CoV-2_anno.csv",
 
 
 Download
+
 The development version can be installed through github:
 
 devtools::install_github(repo="wuaipinglab/CoroAnnoter")
