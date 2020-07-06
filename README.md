@@ -7,21 +7,21 @@ A semi-automatic coronavirus genome annotation tool
 
 ### Data Preparation
 
-#### 1.Coronavirus genome
+#### Coronavirus genome
 
-#### 2.blastdb
+#### blastdb
 
-### soft Preparation
+### Soft Preparation
 
 R, MEME, blast, ORFfinder
 
-### annotation
+### Annotation
 
 #### ORF finder
 
 ORFfinder -in ${samplename}.fasta -g 1 -s 0 -ml 60 -out ${samplename}.ORF -outfmt 0
 
-#### blast
+#### BLAST
 
 blastp -query ${samplename}.ORF -db ${blastdb} -evalue 1e-2 -max_target_seqs 3 -out ${samplename}.blast_out.xls -outfmt "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore slen stitle qcov"
 
@@ -39,7 +39,7 @@ merge_blast("./inst/extdata")
 
 ####Manually process blast results to remove redundant ID.
 
-#### get TRS
+#### Get TRS
 
 source("./R/getTRS.R")
 
@@ -50,7 +50,7 @@ GetTRS(blastfile = "./inst/extdata/Manual-SARS_CoV-2.xls",
 
 system("sh ./R/meme.sh ./inst/extdata/TRS")
 
-#### draw protein
+#### Draw protein
 
 source("./R/pairwise_alignment.R")
 
@@ -71,6 +71,6 @@ plot_protein_single(anno_R = "./inst/extdata/Manual-SARS_CoV-2_anno.csv",
 
 The development version can be installed through github:
 
-devtools::install_github(repo="wuaipinglab/CoroAnnoter")
+       devtools::install_github(repo="wuaipinglab/CoroAnnoter")
 
-library(CoroAnnoter)
+       library(CoroAnnoter)
